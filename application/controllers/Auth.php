@@ -92,7 +92,8 @@
 
 		public function create_password()
 		{
-			$password 	= hash('sha512', 'kepaladinas'.config_item('encryption_key'));
+			$password = $this->input->get('password');
+			$password 	= hash('sha512', $password .config_item('encryption_key'));
 			echo $password;
 		}
 	
